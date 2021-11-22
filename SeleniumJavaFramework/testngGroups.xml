@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SuiteGroups">
+	<test thread-count="5" name="TestGroups">
+
+		<groups>
+
+			<define name="Regression1">
+				<include name="regression"></include>
+				<include name="smoke"></include>
+			</define>
+
+			<run>
+				<include name="AllClassTests"></include>
+				<!-- possibilité d'utiliser les expression regulières -->
+				<!-- <include name="windows.*"></include> -->
+				<!-- <include name="Regression1"></include> -->
+				<!-- <exclude name="regression"></exclude> -->
+			</run>
+		</groups>
+		<classes>
+			<class name="demo.TestNGGroupsDemo" />
+		</classes>
+	</test> <!-- TestGroups -->
+</suite> <!-- SuiteGroups -->
